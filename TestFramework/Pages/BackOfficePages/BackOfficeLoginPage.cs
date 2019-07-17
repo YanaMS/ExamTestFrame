@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using TestFramework.Utils.Extensions;
 
 namespace TestFramework.Pages.BackOfficePages
 {
@@ -38,7 +39,7 @@ namespace TestFramework.Pages.BackOfficePages
 
         public void OpenBackOfficeMenu()
         {
-            ExpandBackOfficeMenu.Click();
+            ExpandBackOfficeMenu.ClickToSuccess();
         }
     }
 

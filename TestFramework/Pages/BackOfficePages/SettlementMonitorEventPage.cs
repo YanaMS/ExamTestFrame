@@ -1,9 +1,8 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using TestFramework.Utils.Extensions;
 
 namespace TestFramework.Pages.BackOfficePages
 {
@@ -102,7 +101,7 @@ namespace TestFramework.Pages.BackOfficePages
 
         public void ClickApproveButton()
         {
-            ApproveButton.Click();
+            ApproveButton.ClickToSuccess();
 
         }
 
