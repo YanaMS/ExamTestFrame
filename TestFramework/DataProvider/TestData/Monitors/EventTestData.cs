@@ -48,7 +48,7 @@ namespace TestFramework.DataProvider.TestData
             EventStage = "Finished",
             EventScore = "1-0 (0-0, 1-0)",
             EventSettlementState = "Settled",
-            Category = "Лига чемпионов УЕФА",
+            Category = "Европа",
             Sport = "Футбол",
             Tournament = "Квалификация"
         };
