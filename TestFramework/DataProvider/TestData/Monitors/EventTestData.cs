@@ -50,7 +50,7 @@ namespace TestFramework.DataProvider.TestData
             EventSettlementState = "Settled",
             Category = "Европа",
             Sport = "Футбол",
-            Tournament = "Квалификация"
+            Tournament = "Лига чемпионов УЕФА. Квалификация"
         };
     }
 }
