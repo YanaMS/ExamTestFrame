@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using System;
+using NUnit.Framework;
 
 namespace TestFramework.Pages.BackOfficePages
 {
@@ -23,6 +24,8 @@ namespace TestFramework.Pages.BackOfficePages
             _driver.FindElement(By.XPath($"//div[.//span[text()='{eventName}'] and span[@class='bo-checkbox']]//span[@class='material-icons']"));
         private IWebElement OpenEventStageMenu =>
             _driver.FindElement(By.XPath("//div[@class='event-list-filter']/div[3]/div[1]/div[1]"));
+        private IWebElement CloseBlockAutosettlementDashboard =>
+            _driver.FindElement(By.XPath(".//button[@class='icon transparent close-button']"));
         private IWebElement ChooseEventStageFromDropDownMenu(string eventStage) =>
             _driver.FindElement(By.XPath($"//*[text()='{eventStage}']"));
         private IWebElement PinnedEventsSection =>
@@ -41,6 +44,7 @@ namespace TestFramework.Pages.BackOfficePages
         public void GoToSettlemenMonitor()
         {
             GoToSettlementMonitor.Click();
+            _driver.Navigate().Refresh();
         }
 
         public SettlementMonitorEventTreePage SetDateInCalendar(DateTime fromDate, DateTime toDate)
@@ -69,12 +73,13 @@ namespace TestFramework.Pages.BackOfficePages
             SelectCategoryInEventTree(categoryName).Click();
             SelectTournamentInEventTree(tournamentName).Click();
             ChooseEventInEventsTree(eventName).Click();
+            CloseBlockAutosettlementDashboard.Click();
             return this;
         }
 
         public SettlementMonitorEventTreePage SelectEventStage(string eventStageName)
         {
-            OpenEventStageMenu.Click();
+            OpenEventStageMenu.Click();           
             ChooseEventStageFromDropDownMenu(eventStageName).Click();
             return this;
         }

@@ -11,12 +11,14 @@ namespace TestFramework.Pages.BackOfficePages
 
         private IWebElement BetLogPopUpOpenButton =>
             _driver.FindElement(By.XPath(".//td[@class='mn-table-cell bet-table-cell log']"));
+        private IWebElement CloseBlockAutosettlementDashboard =>
+            _driver.FindElement(By.XPath(".//button[@class='icon transparent close-button']"));
         private IWebElement BetLogPopUp =>
             _driver.FindElement(By.XPath(".//div[@class='modal-dialog']"));
         private IWebElement EventNameInBetLogPopUp =>
             BetLogPopUp.FindElement(By.XPath(".//td[@class='eventName']"));
         private IWebElement EventStatusInBetLogPopUp =>
-            BetLogPopUp.FindElement(By.XPath(".//span[@class='label boLabel settled']"));
+            BetLogPopUp.FindElement(By.XPath(".//span[@class='label boLabel resettled']"));
         private IWebElement OutcomeResultInBetLogPopUp =>
             BetLogPopUp.FindElement(By.XPath(".//td[@class='result']"));
         private IWebElement OpenBetsFilter =>
@@ -45,7 +47,6 @@ namespace TestFramework.Pages.BackOfficePages
             _driver.FindElement(By.XPath("//span[@class='player-profit-status good']"));
         private IWebElement[] DateTimeGroupCells =>
             _driver.FindElements(By.XPath("//td[@class='mn-table-cell bet-table-cell betAcceptTime']")).ToArray();
-
         private IWebElement[] DateCells =>
             DateTimeGroupCells.Select(i =>
                 i.FindElement(By.XPath("//div[@class='mn-table-cell-content bet-table-cell-content'][2]"))).ToArray();
@@ -63,6 +64,7 @@ namespace TestFramework.Pages.BackOfficePages
 
         public void ClickOnBetsFilterButton()
         {
+            CloseBlockAutosettlementDashboard.Click();
             WaitButtonEnabled(OpenBetsFilter);
             OpenBetsFilter.Click();
         }
@@ -112,6 +114,7 @@ namespace TestFramework.Pages.BackOfficePages
 
         public void OpenBetLogPopUp()
         {
+            CloseBlockAutosettlementDashboard.Click();
             BetLogPopUpOpenButton.Click();
         }
 

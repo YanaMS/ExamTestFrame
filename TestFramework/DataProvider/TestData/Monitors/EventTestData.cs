@@ -31,11 +31,11 @@ namespace TestFramework.DataProvider.TestData
             EventDescription = "Теннис. ITF. Женщины. Биелла. Грунт",
             EventStage = "Finished",
             EventScore = "2-0 (7-5, 6-1)",
-            EventSettlementState = "Settled",
+            EventSettlementState = "Resettled",
             Category = "ITF",
             Sport = "Теннис",
             Tournament = "Женщины. Биелла. Грунт",
-            OutcomeResult = "WIN"
+            OutcomeResult = "LOSE"
                
         };
 
