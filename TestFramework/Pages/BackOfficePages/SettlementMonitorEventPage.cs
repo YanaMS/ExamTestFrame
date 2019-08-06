@@ -64,9 +64,18 @@ namespace TestFramework.Pages.BackOfficePages
 
         public void ClickOnBetsFilterButton()
         {
-            CloseBlockAutosettlementDashboard.Click();
-            WaitButtonEnabled(OpenBetsFilter);
-            OpenBetsFilter.Click();
+            try
+            {
+                CloseBlockAutosettlementDashboard.Click();
+            }
+            catch
+            {
+            }
+            finally
+            {
+                WaitButtonEnabled(OpenBetsFilter);
+                OpenBetsFilter.Click();
+            }
         }
 
         public SettlementMonitorEventPage SetDateInBetsCalendar(DateTime fromDate)
@@ -114,8 +123,18 @@ namespace TestFramework.Pages.BackOfficePages
 
         public void OpenBetLogPopUp()
         {
-            CloseBlockAutosettlementDashboard.Click();
-            BetLogPopUpOpenButton.Click();
+            try
+            {
+                CloseBlockAutosettlementDashboard.Click();
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+                BetLogPopUpOpenButton.Click();
+            }
         }
 
         public string GetEventNameInBetLogPopUp()

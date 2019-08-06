@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using System;
 using NUnit.Framework;
+using System.Linq;
 
 namespace TestFramework.Pages.BackOfficePages
 {
@@ -69,11 +70,20 @@ namespace TestFramework.Pages.BackOfficePages
 
         public SettlementMonitorEventTreePage SelectEventInEventTree(string sportName, string categoryName, string tournamentName, string eventName)
         {
-            SelectSportInEventTree(sportName).Click();
-            SelectCategoryInEventTree(categoryName).Click();
-            SelectTournamentInEventTree(tournamentName).Click();
-            ChooseEventInEventsTree(eventName).Click();
-            CloseBlockAutosettlementDashboard.Click();
+            try
+            {
+                CloseBlockAutosettlementDashboard.Click();
+            }
+            catch
+            {
+            }
+            finally
+            {
+                SelectSportInEventTree(sportName).Click();
+                SelectCategoryInEventTree(categoryName).Click();
+                SelectTournamentInEventTree(tournamentName).Click();
+                ChooseEventInEventsTree(eventName).Click();
+            }
             return this;
         }
 
