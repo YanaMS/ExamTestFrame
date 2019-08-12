@@ -15,7 +15,7 @@ namespace TestFramework.DataProvider.TestData
             EventDescription = "Баскетбол. Венгрия. Дивизион А",
             EventStage = "Finished",
             EventScore = "90-72 (18-22, 26-11, 28-20, 18-19)",
-            EventSettlementState = "Settled",
+            EventSettlementState = "Unsettled",
             Category = "Венгрия",
             Sport = "Баскетбол",
             Tournament = "Дивизион А",

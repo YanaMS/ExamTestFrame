@@ -2,6 +2,7 @@
 using System.IO;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using TestFramework.Utils;
 
 namespace TestFramework.Session
 {
@@ -22,7 +23,7 @@ namespace TestFramework.Session
                 var options = new ChromeOptions();
                 options.AddArgument("start-maximized");// fullscreen
                 driver = new ChromeDriver(Directory.GetCurrentDirectory(),options);
-                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
+                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             }
             else
             {
